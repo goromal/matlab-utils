@@ -60,11 +60,11 @@ classdef Quatd
        function q = mtimes(q1, q2)
            q = q1.otimes(q2);
        end
-       function q = plus(q1, q2)
-           q = q1.boxplus(q2);
+       function q = plus(q1, d)
+           q = q1.boxplus(d);
        end
-       function q = minus(q1, q2)
-           q = q1.boxminus(q2);
+       function d = minus(q1, q2)
+           d = q1.boxminus(q2);
        end
        function roll = roll(self)
            roll = atan2(2.0*(self.w*self.x+self.y*self.z),1.0 - 2.0*(self.x*self.x+self.y*self.y));
